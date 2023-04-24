@@ -145,10 +145,9 @@ int handle_conversion_l_h(const char *format, int *i, va_list inputs)
 	/*char c;*/
 	int *j;
 
+	j = i + 1;
 	switch (format[*i])
-	{
 		case 'l':
-			j = i++;
 			switch (format[*j])
 			{
 				case 'i':
@@ -164,7 +163,6 @@ int handle_conversion_l_h(const char *format, int *i, va_list inputs)
 			}
 			break;
 		case 'h':
-			j = i++;
 			switch (format[*j])
 			{
 				case 'i':
