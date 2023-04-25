@@ -46,5 +46,6 @@ int main(void)
 	_printf("Address:[%p]\n", addr);
 	_printf("%ld %hd\n", 1234567890L, (short)-12345);
 	_printf("%lx %hx\n", num1, num2);
+	_printf("Width test: %5d\n", i);
 	return (0);
 }

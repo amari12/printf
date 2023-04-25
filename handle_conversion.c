@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdarg.h>
+#include <ctype.h>
 
 /**
  * handle_conversion - handles coversion specifiers and prints accordingly
@@ -113,7 +114,7 @@ int handle_conversion2(const char *format, int *i, va_list inputs)
 
 int handle_conversion3(const char *format, int *i, va_list inputs)
 {
-	int printed_chars = 0;
+	int printed_chars = 0, nr, width;
 
 	switch (format[*i])
 	{
@@ -125,6 +126,13 @@ int handle_conversion3(const char *format, int *i, va_list inputs)
 			break;
 		default: /*not followed by any of the above*/
 			printed_chars += handle_conversion_l_h(format, i, inputs);
+			if (isdigit(format[*i]))
+			{
+				width = format[*i] - '0';
+				nr = va_arg(inputs, int);
+				printed_chars += _print_int_width(nr, width);
+				*i = *i + 1;
+			}
 			if (printed_chars == 0)
 				return (0);
 			break;
