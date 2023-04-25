@@ -1,4 +1,5 @@
 #include <stdarg.h>
+#include <stdint.h>
 #include "main.h"
 
 /**
@@ -9,11 +10,11 @@
 
 int _print_long(va_list inputs)
 {
-	long int num;
+	int64_t num;
 	char buffer[32];
 	int i, index = 0;
 
-	num = va_arg(inputs, long);
+	num = va_arg(inputs, int64_t);
 	if (num < 0) /*handling the negative*/
 	{
 		_putchar('-');
@@ -24,11 +25,10 @@ int _print_long(va_list inputs)
 		buffer[index++] = num % 10 + '0';
 		num /= 10;
 	} while (num > 0);
-	{ /* print in rev*/
-		for (i = index - 1; i >= 0; i--)
-		{
-			_putchar(buffer[i]);
-		}
+	/* print in rev*/
+	for (i = index - 1; i >= 0; i--)
+	{
+		_putchar(buffer[i]);
 	}
 	return (index);
 }  /*print long */

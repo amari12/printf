@@ -152,12 +152,12 @@ int handle_conversion_l_h(const char *format, int *i, va_list inputs)
 {
 	int printed_chars = 0/*, nr*/;
 	/*char c;*/
-	int *j;
+	int *j = i;
 
 	switch (format[*i])
 	{
 		case 'l':
-			j = i++;
+			(*j)++;
 			switch (format[*j])
 			{
 				case 'i':case 'd':case 'u':case 'o':case 'x':case 'X':
@@ -169,7 +169,7 @@ int handle_conversion_l_h(const char *format, int *i, va_list inputs)
 			printed_chars += _print_long(inputs);
 			break;
 		case 'h':
-			j = i++;
+			(*j)++;
 			switch (format[*j])
 			{
 				case 'i':case 'd':case 'u':case 'o':case 'x':case 'X':

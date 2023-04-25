@@ -22,6 +22,11 @@ int _print_ptr(va_list inputs)
 	p = buffer + sizeof(buffer - 1);
 	*--p = '\0';
 	num = (uintptr_t)ptr;
+	if (num == 0)
+	{
+		len = 0;
+		return (len);
+	}
 	do {
 		*--p = hex[num % 16];
 		num /= 16;

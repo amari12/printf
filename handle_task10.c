@@ -14,29 +14,24 @@ int precision(const char *format, int *i, va_list inputs)
 	int index = *i + 1;
 	int precision = -1;
 
-	if (format[index] != '.')
-		return (precision);
-
-	precision = 0;
-
-	for (index += 1; format[index] != '\0'; index++)
+	if (format[index] == '.')
 	{
-		if (isdigit(format[index]))
-		{
-			precision *= 10;
-			precision += format[index] - '0';
-		}
-		else if (format[index] == '*')
-		{
-			index++;
-			precision = va_arg(inputs, int);
-			break;
-		}
-		else
-			break;
+		precision = 0;
+		index++;
 	}
-
+	if (format[index] == '*')
+	{
+		index++;
+		precision = va_arg(inputs, int);
+	}
+	else
+	{
+		while (isdigit(format[index]))
+		{
+			precision = precision * 10 + (format[index] - '0');
+			index++;
+		}
+	}
 	*i = index - 1;
-
 	return (precision);
 }
