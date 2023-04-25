@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stddef.h>
 
 /**
  * _print_npc - print string and the non printable chars
@@ -9,26 +10,28 @@
 int _print_npc(va_list inputs)
 {
 	char *str;
-	int i = 0;
-	char c;
+	int i, counter = 0;
 
 	str = va_arg(inputs, char*);
-	while ((c = str[i]) != '\0')
-	{/*check if c is printable ASCII values between 32 and 126*/
-		if (c < 32 || c >= 127)
-		{/*c is not printable */
-			_putchar('\\');/* prints escape sequence */
+	if (str == NULL)
+	{
+		str = "(null)";
+	}
+	for (i = 0; str[i]; i++)
+	{
+		if (str[i] < 32 || str[i] >= 127)
+		{
+			_putchar('\\');
 			_putchar('x');
-			/*performing bitwise operations and adding the appropriate ASCII value*/
-			_putchar((c >> 4) + '0');/* isolating everyset of 4 bits */
-			_putchar((c & 0x0F) + ((c & 0x0F) < 10 ? '0' : 'A' - 10));
+			_putchar((str[i] / 16) + '0');
+			_putchar((str[i] % 16) + ((str[i] % 16 < 10) ? '0' : 'A' - 10));
+			counter += 4;
 		}
 		else
 		{
-			_putchar(c);
+			_putchar(str[i]);
+			counter++;
 		}
-		i++;
 	}
-	return (0);
+	return (counter);
 }
-
