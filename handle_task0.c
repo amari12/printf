@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdarg.h>
+#include <stddef.h>
 
 /**
  * _print_str - prints a string
@@ -13,6 +14,10 @@ int _print_str(va_list inputs)
 	int i;
 	char *str = va_arg(inputs, char *); /*get string from va_list*/
 
+	if (str == NULL)
+	{
+		return (0);
+	}
 	for (i = 0; str[i] != '\0'; i++)
 	{ /*loop through str/inputs*/
 		_putchar(str[i]); /*print value at address*/

@@ -76,9 +76,10 @@ int handle_conversion2(const char *format, int *i, va_list inputs)
 			printed_chars += _print_plus(format, i, inputs);
 			break;
 		case ' ':
+			/*printed_chars += _check_next_flag(format, i ,inputs);*/
 			printed_chars += _print_space(format, i, inputs);
 			break;
-		case '#':
+		case '#':/*printed_chars += _check_next_flag(format, i ,inputs);*/
 			printed_chars += _print_zeros(format, i, inputs);
 			break;
 		case 'o':
@@ -145,10 +146,10 @@ int handle_conversion_l_h(const char *format, int *i, va_list inputs)
 	/*char c;*/
 	int *j;
 
-	j = i + 1;
 	switch (format[*i])
 	{
 		case 'l':
+			j = i++;
 			switch (format[*j])
 			{
 				case 'i':case 'd':case 'u':case 'o':case 'x':case 'X':
@@ -157,9 +158,9 @@ int handle_conversion_l_h(const char *format, int *i, va_list inputs)
 				default:
 					break;
 			}
-			printed_chars += _print_long(inputs);
 			break;
 		case 'h':
+			j = i++;
 			switch (format[*j])
 			{
 				case 'i':case 'd':case 'u':case 'o':case 'x':case 'X':
@@ -168,7 +169,6 @@ int handle_conversion_l_h(const char *format, int *i, va_list inputs)
 				default:
 					break;
 			}
-			printed_chars += _print_short(inputs);
 			break;
 		default:
 			printed_chars = 0; /*no match*/

@@ -5,8 +5,5 @@ April 2023
 Group members:
 	Anas Hafid
 	Amari Kotze
-
-Owner of github repository: 
-
-
+Owner of github repository: Amari Kotze
 

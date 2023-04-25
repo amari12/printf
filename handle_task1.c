@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdarg.h>
+#include <stddef.h>
 
 /**
  * _print_int - prints numbers
@@ -12,6 +13,11 @@ int _print_int(int nr)
 	int counter = 0, count = 0;
 	int int_char; /*single digit to print using putchar*/
 	int number = nr; /*going to change*/
+	int *ptr;
+
+	ptr = &nr;
+	if (ptr == NULL)
+		return (0);
 
 	if (number < 0)
 	{ /*if negative, change to positive and write -*/

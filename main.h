@@ -17,6 +17,7 @@ int handle_conversion3(const char *format, int *i, va_list inputs);
 int _print_str(va_list inputs);
 /*in handle_task1.c*/
 int _print_int(int nr);
+/*int _print_int_width(int nr, int width, char char_pad);*/
 /*in handle_task2.c*/
 int _print_bin(va_list inputs);
 /*in handle_task3.c*/
@@ -28,9 +29,6 @@ int _print_ud(va_list inputs);
 int _print_plus(const char *format, int *i, va_list inputs);
 int _print_space(const char *format, int *i, va_list inputs);
 int _print_zeros(const char *format, int *i, va_list inputs);
-/*int _check_next_flag(const char *format, int *i, va_list inputs);*/
-/*int _print_int_with_flags(va_list inputs, int has_plus, int has_space*/
- /* int has_hash, int has_minus, int has_zero, int length);*/
 /*in handle_task13.c*/
 int _print_str_rev(va_list inputs);
 /*in handle_task14.c*/
@@ -43,7 +41,9 @@ int _print_ptr(va_list inputs);
 int _print_long(va_list inputs);
 int _print_short(va_list inputs);
 int handle_conversion_l_h(const char *format, int *i, va_list inputs);
-/*in handle_task10.c*/
-void precision(va_list inputs);
+/*in handle_task9.c*/
+/*int _check_next_flag(const char *format, int *i, va_list inputs);*/
+/*int _print_int_with_flags(va_list inputs, int has_plus, int has_space,*/
+/*int has_hash, int has_minus, int has_zero, int length);*/
 
 #endif
