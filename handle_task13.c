@@ -14,6 +14,10 @@ int _print_str_rev(va_list inputs)
 	int i = 0, len = 0;
 
 	str = va_arg(inputs, char *); /*get string from arguments*/
+	if (str == NULL || *str == '\0')
+	{
+		return (-1);
+	}
 	len = strlen(str);
 	for (i = len - 1; i >= 0; i--)
 	{ /*to print in rev*/
