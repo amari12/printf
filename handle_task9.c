@@ -34,13 +34,12 @@ int _print_int_width(int nr, int width)
 		count++;
 	}
 	power_of_10 /= 10;
-	
 	counter += count;
 	for (i = 0; i < (width - counter); i++)
 	{
 		_putchar(' ');
 	}
-	/*print digit when end of recursion is reached & traverse back*/	
+	/*print digit when end of recursion is reached & traverse back*/
 	while (count > 0)
 	{
 		int_char = nr / power_of_10;
