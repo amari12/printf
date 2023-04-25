@@ -16,13 +16,15 @@ int _print_str(va_list inputs)
 
 	if (str == NULL)
 	{
-		return (0);
+		return (-1);
 	}
 	for (i = 0; str[i] != '\0'; i++)
 	{ /*loop through str/inputs*/
 		_putchar(str[i]); /*print value at address*/
 		counter++; /*increase counter for each char printed*/
 	} /*for*/
+	if (counter < 0)
+		return (-1);
 	return (counter);
 } /*_print_str*/
 
