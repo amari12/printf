@@ -15,7 +15,7 @@ int _print_npc(va_list inputs)
 	str = va_arg(inputs, char*);
 	if (str == NULL)
 	{
-		str = "(null)";
+		return (0);
 	}
 	for (i = 0; str[i]; i++)
 	{
