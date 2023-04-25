@@ -37,6 +37,9 @@ int handle_conversion(const char *format, int *i, va_list inputs)
 		case 'b':
 			printed_chars += _print_bin(inputs);
 			break;
+		case '0':
+			printed_chars += print_0(str, width) + print_00(str, width);
+			break;
 		default: /*not followed by any of the above*/
 			/* check second batch of format specifiers*/
 			printed_chars += handle_conversion2(format, i, inputs);
