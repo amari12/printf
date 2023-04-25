@@ -16,7 +16,7 @@ int _print_str(va_list inputs)
 
 	if (str == NULL)
 	{
-		return (-1);
+		break;
 	}
 	for (i = 0; str[i] != '\0'; i++)
 	{ /*loop through str/inputs*/
@@ -24,7 +24,7 @@ int _print_str(va_list inputs)
 		counter++; /*increase counter for each char printed*/
 	} /*for*/
 	if (counter < 0)
-		return (-1);
+		break;
 	return (counter);
 } /*_print_str*/
 
