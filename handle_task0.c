@@ -16,7 +16,7 @@ int _print_str(va_list inputs)
 
 	if (str == NULL)
 	{
-		return(0);
+		return (0);
 	}
 	for (i = 0; str[i] != '\0'; i++)
 	{ /*loop through str/inputs*/

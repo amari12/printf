@@ -158,6 +158,7 @@ int handle_conversion_l_h(const char *format, int *i, va_list inputs)
 				default:
 					break;
 			}
+			printed_chars += _print_long(inputs);
 			break;
 		case 'h':
 			j = i++;
@@ -169,6 +170,7 @@ int handle_conversion_l_h(const char *format, int *i, va_list inputs)
 				default:
 					break;
 			}
+			printed_chars += _print_short(inputs);
 			break;
 		default:
 			printed_chars = 0; /*no match*/
