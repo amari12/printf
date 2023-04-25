@@ -12,8 +12,8 @@
 
 int handle_conversion(const char *format, int *i, va_list inputs)
 {
-	int printed_chars = 0, nr; /*nr for print int*/
-	char c;
+	int printed_chars = 0, width = 5, nr; /*nr for print int*/
+	char *str = "hi", c;
 
 	switch (format[*i])
 	{

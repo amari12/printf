@@ -43,6 +43,9 @@ int _print_short(va_list inputs);
 int handle_conversion_l_h(const char *format, int *i, va_list inputs);
 /*in handle_task9.c*/
 int _print_int_width(int nr, int width);
+/*in handle_task11.c*/
+int print_00(const char *str, int width);
+int print_0(const char *str, int width);
 /*int _check_next_flag(const char *format, int *i, va_list inputs);*/
 /*int _print_int_with_flags(va_list inputs, int has_plus, int has_space,*/
 /*int has_hash, int has_minus, int has_zero, int length);*/
