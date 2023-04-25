@@ -48,6 +48,46 @@ int _print_hex(va_list inputs)
 } /*_print_hex*/
 
 /**
+ * _print_hex_small - prints hexadecimal in small letters
+ * @inputs: input arguments
+ * Return: int (printed chars)
+ */
+
+int _print_hex_small(va_list inputs)
+{
+	int number;
+	int length = 0, j = 0, i, temp, counter = 0;
+	char hex[100];
+
+	number = va_arg(inputs, int);
+
+	if (number == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
+	while (number)
+	{
+		temp = number % 16;
+		if (temp < 10)
+			temp += 48;
+		else
+			temp += 55;
+		if (temp >= 65 && temp <= 70)
+			temp += 32;
+		length += 1;
+		hex[j++] = temp;
+		number = number / 16;
+	} /*while*/
+	for (i = length - 1; i >= 0; i--)
+	{
+		_putchar(hex[i]);
+		counter++;
+	} /*for print*/
+	return (counter);
+} /*print hex small*/
+
+/**
  * _print_oct - prints octal representation of input
  * @inputs: va_list inputs
  * Return: int (nr of chars printed)

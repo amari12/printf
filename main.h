@@ -21,15 +21,16 @@ int _print_int(int nr);
 int _print_bin(va_list inputs);
 /*in handle_task3.c*/
 int _print_hex(va_list inputs);
+int _print_hex_small(va_list inputs);
 int _print_oct(va_list inputs);
 int _print_ud(va_list inputs);
 /*in handle_task7.c */
 int _print_plus(const char *format, int *i, va_list inputs);
 int _print_space(const char *format, int *i, va_list inputs);
 int _print_zeros(const char *format, int *i, va_list inputs);
-int _check_next_flag(const char *format, int *i, va_list inputs);
-int _print_int_with_flags(va_list inputs, int has_plus, int has_space,
-	       int has_hash, int has_minus, int has_zero, int length);
+/*int _check_next_flag(const char *format, int *i, va_list inputs);*/
+/*int _print_int_with_flags(va_list inputs, int has_plus, int has_space,
+	       int has_hash, int has_minus, int has_zero, int length);*/
 /*in handle_task13.c*/
 int _print_str_rev(va_list inputs);
 /*in handle_task14.c*/
