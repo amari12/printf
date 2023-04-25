@@ -29,8 +29,7 @@ int handle_conversion(const char *format, int *i, va_list inputs)
 			_putchar('%');
 			printed_chars++;
 			break;
-		case 'd':
-		case 'i':
+		case 'd':case 'i':
 			nr = va_arg(inputs, int);
 			printed_chars += _print_int(nr);
 			break;
